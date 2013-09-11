@@ -6,9 +6,8 @@
 #import "DragDropAudio.h"
 
 
-@interface ViewControllerFactory : SPSprite {
-
-    
+@interface ViewControllerFactory : SPSprite
+{
     @public
     Interaction *mCurrentScene;
     
@@ -21,7 +20,6 @@
 }
 
 - (id)initWithObjects:(id)_mapp model:(Model*)mModel;
-
 
 - (void)construct:(NSString*)className;
 
