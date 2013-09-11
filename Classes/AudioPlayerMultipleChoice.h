@@ -3,8 +3,9 @@
 #import "AudioPlayerComponent.h"
 
 
-@interface AudioPlayerMultipleChoice : ImageText {
-@protected
+@interface AudioPlayerMultipleChoice : ImageText
+{
+    @protected
     AudioPlayerComponent *player;
 }
 

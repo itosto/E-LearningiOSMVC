@@ -9,19 +9,19 @@
 
 @implementation AudioPlayerMultipleChoice
 
-- (void) initializeInteraction{
-
+- (void) initializeInteraction
+{
     player = [[AudioPlayerComponent alloc] init];
     [player injectData:[dataClick_obj.clickURL objectAtIndex:0] ];
     [interaction_sp addChild:player];
     
     player.x = 100;
     player.y = 400;
-    
-	//[self playAudio:nextPop];
 }
-- (void) willLeavetoAnotherModule{
-    NSLog(@"AudioPlayerMultipleChoice::willLeavetoAnotherModule");
+
+
+- (void) willLeavetoAnotherModule
+{
     [self release];
 }
 
@@ -29,7 +29,6 @@
 - (void) onMouseDown:(SPEvent*) event
 {
 	NSString* type= [event.currentTarget getmType];
-    
 	
 	if ([type isEqualToString:@"nextScenario"]) {
         
@@ -39,8 +38,10 @@
         obj.correct_answer_eval = [dataClick_obj.clickCorrect objectAtIndex:event.currentTarget.mId];
         obj.feedback = [dataClick_obj.clickPopText objectAtIndex:event.currentTarget.mId];
         
-        for (int i=0; i<=clicks; ++i){
+        for (int i=0; i<=clicks; ++i )
+        {
             NSString * str = [dataClick_obj.clickCorrect objectAtIndex:i];
+            
             if ( [str isEqualToString: @"1" ]){
                 obj.correct_answer_text = [dataClick_obj.clickText objectAtIndex:i];
             }
@@ -67,7 +68,8 @@
 	}  else if ([type isEqualToString:@"nextActivity"]){
         
         [interaction_sp removeAllChildren];
-        int n = [[interaction_data_obj.buttonURL objectAtIndex: [event.currentTarget index]] intValue];
+        id num = [event.currentTarget index];
+        int n = [[interaction_data_obj.buttonURL objectAtIndex: num] intValue];
         [appMain remove:n];
 	}
 }
