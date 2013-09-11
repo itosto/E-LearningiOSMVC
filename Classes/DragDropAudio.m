@@ -1,11 +1,3 @@
-//
-//  DragDropAudio.m
-//  Ipadsparrow2
-//
-//  Created by jperez-diaz on 5/25/11.
-//  Copyright 2011 My Company. All rights reserved.
-//
-
 #import "DragDropAudio.h"
 #import "Model.h"
 #import "ViewControllerFactory.h"

@@ -1,11 +1,3 @@
-//
-//  SummaryofAnswers.h
-//  Sparrow
-//
-//  Created by Jose D Perez-Diaz on 9/14/12.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 @interface UserAnswerData : NSObject{

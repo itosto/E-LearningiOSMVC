@@ -1,11 +1,3 @@
-//
-//  AudioPlayerMultipleChoice.m
-//  Sparrow
-//
-//  Created by Jose D Perez-Diaz on 9/3/12.
-//
-//
-
 #import "AudioPlayerMultipleChoice.h"
 #import "SPSound.h"
 #import "SPSoundChannel.h"

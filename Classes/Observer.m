@@ -1,11 +1,3 @@
-//
-//  Observer.m
-//  Ipadsparrow2
-//
-//  Created by Jose D Perez on 3/7/11.
-//  Copyright 2011 __AllenIteractions__. All rights reserved.
-//
-
 #import "Observer.h"
 
 

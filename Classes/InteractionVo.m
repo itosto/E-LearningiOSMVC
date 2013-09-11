@@ -1,11 +1,3 @@
-//
-//  InteractionVo.m
-//  Ipadsparrow2
-//
-//  Created by Jose Perez on 3/3/11.
-//  Copyright 2011 __AllenInteractions__. All rights reserved.
-//
-
 #import "InteractionVo.h"
 
 

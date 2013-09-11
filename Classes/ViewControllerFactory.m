@@ -1,11 +1,3 @@
-//
-//  SuperView.m
-//  Ipadsparrow2
-//
-//  Created by Jose D Perez on 3/8/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "ViewControllerFactory.h"
 #import "Interaction.h"
 #import "Model.h"

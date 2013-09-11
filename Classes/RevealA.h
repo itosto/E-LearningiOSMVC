@@ -1,11 +1,3 @@
-//
-//  RevealA.h
-//  Ipadsparrow2
-//
-//  Created by jperez-diaz on 5/11/11.
-//  Copyright 2011 JDTechSolutions. All rights reserved.
-//
-
 #import "Interaction.h"
 
 @class InteractionVo;

@@ -1,11 +1,3 @@
-//
-//  SuperView.h
-//  Ipadsparrow2
-//
-//  Created by Jose D Perez on 3/8/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "Sparrow.h"
 #import "RevealA.h"

@@ -1,11 +1,3 @@
-//
-//  AudioPlayerComponent.h
-//  Sparrow
-//
-//  Created by Jose Perez on 9/4/12.
-//
-//
-
 #import <AVFoundation/AVFoundation.h>
 #import "SPDisplayObject.h"
 #import "SPSound.h"

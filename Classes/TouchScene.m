@@ -1,11 +1,3 @@
-//
-//  TestScene.m
-//  Sparrow
-//
-//  Created by Daniel Sperl on 30.04.09.
-//  Copyright 2009 Incognitek. All rights reserved.
-//
-
 #import "TouchScene.h"
 
 // --- private interface ---------------------------------------------------------------------------

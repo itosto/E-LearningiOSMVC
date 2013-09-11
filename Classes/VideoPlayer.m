@@ -1,11 +1,3 @@
-//
-//  VideoPlayer.m
-//  Sparrow
-//
-//  Created by Jose D Perez-Diaz on 8/19/12.
-//
-//
-
 #import "VideoPlayer.h"
 #import "Model.h"
 #import "ViewControllerFactory.h"

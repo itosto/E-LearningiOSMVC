@@ -1,11 +1,3 @@
-//
-//  ImageText.m
-//  Ipadsparrow2
-//
-//  Created by Jose D Perez on 3/8/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import "ImageText.h"
 #import "Model.h"
 #import "ViewControllerFactory.h"

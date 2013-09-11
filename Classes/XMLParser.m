@@ -1,11 +1,3 @@
-//
-//  XMLParser.m
-//  Ipadsparrow2
-//
-//  Created by Jose Perez on 3/3/11.
-//  Copyright 2011 JDTechSolutions. All rights reserved.
-//
-
 #import "XMLParser.h"
 #import "InteractionVo.h"
 #import "InteractionVoClick.h"

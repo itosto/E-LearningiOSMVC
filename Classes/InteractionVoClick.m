@@ -1,11 +1,3 @@
-//
-//  InteractionVoPop.m
-//  Ipadsparrow2
-//
-//  Created by jperez-diaz on 5/24/11.
-//  Copyright 2011 My Company. All rights reserved.
-//
-
 #import "InteractionVoClick.h"
 
 

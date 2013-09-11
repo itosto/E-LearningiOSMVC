@@ -1,11 +1,3 @@
-//
-//  SummaryChoiceFeedback.m
-//  Sparrow
-//
-//  Created by Jose D Perez-Diaz on 9/16/12.
-//
-//
-
 #import "ReviseUserChoiceFeedback.h"
 #import "SPImage.h"
 #import "SPButton.h"

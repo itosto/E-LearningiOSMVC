@@ -1,11 +1,3 @@
-//
-//  TouchSheet.h
-//  Sparrow
-//
-//  Created by Daniel Sperl on 08.05.09.
-//  Copyright 2009 Incognitek. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "Sparrow.h"
 

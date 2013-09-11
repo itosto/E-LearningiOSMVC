@@ -1,11 +1,3 @@
-//
-//  Observer.h
-//  Ipadsparrow2
-//
-//  Created by Jose D Perez on 3/7/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import "XMLParser.h"//;
 #import "InteractionVo.h"//;

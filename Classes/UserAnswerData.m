@@ -1,11 +1,3 @@
-//
-//  SummaryofAnswers.m
-//  Sparrow
-//
-//  Created by Jose D Perez-Diaz on 9/14/12.
-//
-//
-
 #import "UserAnswerData.h"
 
 @implementation UserAnswerData

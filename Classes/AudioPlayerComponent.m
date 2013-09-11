@@ -1,11 +1,3 @@
-//
-//  AudioPlayerComponent.m
-//  Sparrow
-//
-//  Created by Jose Perez on 9/4/12.
-//
-//
-
 #import <QuartzCore/QuartzCore.h> // for CACurrentMediaTime
 
 
