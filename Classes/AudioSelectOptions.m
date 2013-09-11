@@ -20,31 +20,30 @@
 
 @synthesize nextPop;
 
-- (id)init {
+- (id)init
+{
     if (self = [super init]) {
         [self setupSprite];        
     }
     return self;
 }
 
-- (void)setupSprite {
-	
+- (void)setupSprite
+{
 	interaction_sp = [[SPSprite alloc] init];
 	
 }
 
 
-- (void) populateText{
-	
-	NSLog(@"AudioSelectOptions::populateText %@", data_obj.bodyTextX);
-	
+- (void) populateText
+{
 	interaction_sp.x=0;
 	interaction_sp.y=0;
 	
 	[self addChild:interaction_sp];
 	
-	for (int i=0; i<=titles; ++i){
-		
+	for ( int i=0; i<=titles; ++i )
+    {
 		SPTextField *title = [SPTextField textFieldWithWidth:600 height:50 text:[data_obj.titles objectAtIndex: i]];
 		title.hAlign = SPHAlignLeft;
 		title.vAlign = SPVAlignTop;
@@ -64,11 +63,8 @@
 		[interaction_sp addChild:title];
 	}
 	
-	NSLog(@"AudioSelectOptions::populateText B");
-	// textbox text
-	
-	for (int i=0; i<=textfields; ++i){
-		
+	for (int i=0; i<=textfields; ++i)
+    {
 		SPTextField *bodyText = [SPTextField textFieldWithWidth:[[data_obj.bodyTextWidth objectAtIndex: i]intValue] 
 														 height:[[data_obj.bodyTextHeight objectAtIndex: i]intValue]  
 														   text:[data_obj.bodyText objectAtIndex: i]];
@@ -90,40 +86,29 @@
 		bodyText.name=str;
 		
 		[interaction_sp addChild:bodyText];	
-		
 	}
 	
-	NSArray *a=[model notes_arr];
-	
+	NSArray *a = model.notes_array;
 	NSInteger l=[a count];
 	
-	
-	NSLog(@"AudioSelectOptions::populate text array %@", a);
-	
-	for (int i=0; i<l;i++){
+	for (int i=0; i<l;i++ )
+    {
 		NSMutableString *text = [[NSMutableString alloc] init];
-		
-		NSString* str=[[interaction_sp childByName:@"bodytext1"] text];
-		
-		NSLog(@"AudioSelectOptions::populate text stringText %@", str);
-		
+        SPTextField *bodyText = [interaction_sp childByName:@"bodytext1"];
+		NSString* str=[bodyText text];
 		[text appendString:[NSString stringWithFormat:@"%@ \r%@",str,[a objectAtIndex:i]]];
-		
 		[[interaction_sp childByName:@"bodytext1"] setText: text];
-		
-		//[text release];
-		
 	}
 	
 }
 
 
-- (void) addInteractions{
-	
+- (void) addInteractions
+{
 	NSLog(@"AudioSelectOptions::addInteractions");
 	
-	for (int i=0; i<=buttons; ++i){
-		
+	for (int i=0; i<=buttons; ++i )
+    {
 		SPTexture* nextButtonTexture = [SPTexture textureWithContentsOfFile:[data_obj.buttonImage objectAtIndex: i]];
 		SPButton* button = [SPButton buttonWithUpState:nextButtonTexture text:[data_obj.buttonText objectAtIndex: i]];
 		[button addEventListener:@selector(onMouseDown:) atObject:self forType:SP_EVENT_TYPE_TRIGGERED];   
@@ -146,7 +131,8 @@
 	}
 	
 	
-	for (int i=0; i<=clicks; ++i){
+	for (int i=0; i<=clicks; ++i)
+    {
 		
 		SPTexture* clickTexture = [SPTexture textureWithContentsOfFile:[dataClick_obj.clickImage objectAtIndex: i]];
 		
@@ -177,15 +163,13 @@
 }
 
 
-- (void) addImage{
-	NSLog(@"AudioSelectOptions::addImage");
-	
+- (void) addImage
+{
 	int objcount=([data_obj.imageUrl count]-1);
 	
-	for (int i=0; i<=objcount; ++i){
+	for (int i=0; i<=objcount; ++i )
+    {
 		SPImage* image = [SPImage imageWithContentsOfFile:[data_obj.imageUrl objectAtIndex: i]];
-		
-		
 		image.x=[[data_obj.imageX objectAtIndex: i] intValue];
 		image.y=[[data_obj.imageY objectAtIndex: i] intValue];
 		image.rotation=[[data_obj.imageRotation objectAtIndex: i] floatValue];
@@ -273,8 +257,6 @@
 					 forType:SP_EVENT_TYPE_SOUND_COMPLETED];
 	
 	[channel play];
-	
-	
 }
 
 
@@ -311,9 +293,8 @@
 	}
 }
 
-- (void) initializeInteraction{
-	
-	NSLog(@"AudioSelectOptions::initializeInteraction");
+- (void) initializeInteraction
+{
 	[[interaction_sp childByName:@"image0"] setAlpha:1];
 	[[interaction_sp childByName:@"click1"] setVisible:NO];
 	[[interaction_sp childByName:@"click2"] setVisible:NO];
@@ -325,29 +306,18 @@
 	[[interaction_sp childByName:@"bodytext1"] setHAlign: SPHAlignLeft];
 	
 	nextPop=0;
-	
 	[self playPop:nextPop];
-	
-	
 }
-
-
 
 
 - (void) update 
 {
-	NSLog(@"AudioSelectOptions::update");
-	
 	data_obj=[model xml];
 	dataClick_obj=[model xmlClick];
-	
-	
 	titles=[data_obj.titles count]-1;
 	buttons=[data_obj.buttonX count]-1;
 	textfields=[data_obj.bodyText count]-1;
-	
 	clicks=[dataClick_obj.clickX count]-1;
-	
 	[self addImage];
 	[self populateText];
 	[self addInteractions];
@@ -356,20 +326,18 @@
 	
 }
 
-- (void) willLeavetoAnotherModule{
+- (void) willLeavetoAnotherModule
+{
     [channel stop];
     channel=nil;
     sound=nil;
     [interaction_sp release];
 	[sound release];
 	[channel release];
-   
 }
 
-- (void)dealloc {
-	NSLog(@"AudioSelectOptions::dealloc");
-	
-	//[interaction_sp release];
+- (void)dealloc
+{
 	[sound release];
 	[channel release];
     [super dealloc];

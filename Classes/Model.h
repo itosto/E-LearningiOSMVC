@@ -4,15 +4,14 @@
 #import "InteractionVo.h"//;
 #import "UserAnswerData.h"
 
-@interface Model : Observer {
-	
+@interface Model : Observer
+{
 	@public
 	XMLParser *XML;
 	NSInteger currentScenario;
 	NSMutableDictionary * data_arr;
+    NSArray *notes_array;
     id app;
-
-
 }
 
 
@@ -36,5 +35,7 @@
 @property (nonatomic,copy) XMLParser *XML;
 @property (nonatomic,copy) NSMutableDictionary* data_arr;
 @property (nonatomic,retain) id app;
+@property (nonatomic,copy) NSArray * notes_array;
+
 
 @end

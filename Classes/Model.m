@@ -8,117 +8,102 @@
 @synthesize data_arr;
 @synthesize app;
 
-	- (id)initWithVars:(NSInteger*) mcurrentScenario {
+- (id)initWithVars:(NSInteger*) mcurrentScenario
+{
 	
-		if (self = [super init])
-		{
-			currentScenario=0;
-			data_arr=[[NSMutableDictionary alloc] init];
+    if (self = [super init])
+    {
+        currentScenario=0;
+        data_arr=[[NSMutableDictionary alloc] init];
 			
-		}
+    }
 	
-		return self;
+    return self;
 		
-	}
-//---
+}
 
-	- (id)init
-	{
+- (id)init
+{
 	
-		return [self initWithVars:nil];
-	}
+    return [self initWithVars:nil];
+}
 
-//---
 
-	- (void) registerView: (id) view
-	{
-		[super addSubscriber:view];
+- (void) registerView: (id) view
+{
+    [super addSubscriber:view];
 	
-	}
+}
 
-//---
 
-	- (void) unregisterView: (id) view
-	{
-		[super removeSubscriber:view];
+- (void) unregisterView: (id) view
+{
+    [super removeSubscriber:view];
 	
-	}
+}
 
-//---
-
-	- (id) xml
-	{
-		NSLog(@"Model::xml::currentScene %d", currentScenario);
-		NSString *str= @"Activity";
-		NSString *converted = [NSString stringWithFormat:@"%d", currentScenario];
-		str = [str stringByAppendingString:converted];
-		return [XML contentAt:str];
-		
-	}
-
+- (id) xml
+{
+    NSString *str= @"Activity";
+    NSString *converted = [NSString stringWithFormat:@"%d", currentScenario];
+    str = [str stringByAppendingString:converted];
+    return [XML contentAt:str];
+}
 
 - (id) xmlClick
 {
-	NSLog(@"Model::xml::currentScene %d", currentScenario);
-	NSString *str= @"ClickActivity";
-	NSString *converted = [NSString stringWithFormat:@"%d", currentScenario];
-	str = [str stringByAppendingString:converted];
-	return [XML contentAtClick:str];
-	
+    NSLog(@"Model::xml::currentScene %d", currentScenario);
+    NSString *str= @"ClickActivity";
+    NSString *converted = [NSString stringWithFormat:@"%d", currentScenario];
+    str = [str stringByAppendingString:converted];
+    return [XML contentAtClick:str];
 }
-//---
 
-	- (void) loadXML: (NSString*) xmlFile 
-	{
-		NSLog(@"Model::loadXML %@ ",xmlFile);
-		XML=[[XMLParser alloc] initWithContentsOfFile:xmlFile];
-		[self startingModule];
-			
-	}	
+- (void) loadXML: (NSString*) xmlFile 
+{
+    NSLog(@"Model::loadXML %@ ",xmlFile);
+    XML=[[XMLParser alloc] initWithContentsOfFile:xmlFile];
+    [self startingModule];
+}
 
-
-//---
-
-	-(void) startingModule 
-	{
-		NSLog(@"Model::startingModule");
-		currentScenario=0;
-		[super notifyChanges];
-        //[app startingModule];
-	}
+-(void) startingModule 
+{
+    NSLog(@"Model::startingModule");
+    currentScenario=0;
+    [super notifyChanges];
+}
 
 
 //--- Add a view to the  model's state
 
-	- (void) pushClass: (NSMutableArray*) classNames
-	{
-		[super addState:classNames];
+- (void) pushClass: (NSMutableArray*) classNames
+{
+    [super addState:classNames];
 	
-	}
+}
 
 //--- Remove a view from the model's state 
 
-	- (void) removeClass: (NSMutableArray*) classNames
-	{
-		NSLog(@"Model::removeClass");
-		[super removeState:classNames];
-	}
+- (void) removeClass: (NSMutableArray*) classNames
+{
+    NSLog(@"Model::removeClass");
+    [super removeState:classNames];
+}
 
 //--- Add objects to the Views pool 
 
-	- (void) pushObj: (id) obj
-	{
-		NSLog(@"Model::pushObj");
-		[super storeObjects:obj];
-	}
+- (void) pushObj: (id) obj
+{
+    NSLog(@"Model::pushObj");
+    [super storeObjects:obj];
+}
 
 
-- (void) nextScenario{
+- (void) nextScenario
+{
 	
 	NSLog(@"Model::nextScenario %d", currentScenario);
 	currentScenario=currentScenario+1;
-	
-
 }
 
 
@@ -131,29 +116,30 @@
 }
 
 
-- (void) cleanDataArr{
+- (void) cleanDataArr
+{
 	
 	data_arr=nil;
 	
 }
 
 
-- (void) previousScenario{
-	
+- (void) previousScenario
+{
 	currentScenario=currentScenario-1;	
 }
 
-- (void) skipBack:(NSInteger)n{
-	
+- (void) skipBack:(NSInteger) n
+{
 	currentScenario=currentScenario-n;	
 }
 
 
-- (void) notify {
-	
+- (void) notify
+{
 	[super notifyChanges];
 }
-//---
+
 
 - (void)dealloc
 {

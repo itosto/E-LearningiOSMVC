@@ -5,8 +5,8 @@
 @class InteractionVo;
 @class InteractionVoClick;
 
-@interface AudioSelectOptions : Interaction {
-	
+@interface AudioSelectOptions : Interaction
+{
 	SPSprite *interaction_sp;
 	InteractionVo *data_obj;
 	InteractionVoClick *dataClick_obj;

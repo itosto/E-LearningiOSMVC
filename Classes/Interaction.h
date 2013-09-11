@@ -22,6 +22,7 @@
 - (void) willLeavetoAnotherModule;
 - (void) injectData:(id)_msuperView model:(Model*)mModel mAppMain:(id) appMain;
 - (void) initializeInteraction;
+- (void) update;
 
 @property (nonatomic,assign) NSInteger titles;
 @property (nonatomic,assign) NSInteger buttons;
